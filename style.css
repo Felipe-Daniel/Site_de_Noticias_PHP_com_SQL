@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body, html {
+  height: 100%;
+}
+
+/*
+### STICKY FOOTER ###
+*/
+main {
+  min-height: 100%;
+  margin-bottom: -120px;
+}
+
+main::after {
+  content: '';
+  display: block;
+}
+
+footer, main::after {
+  height: 120px;
+}
+
+nav, nav ul, .news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+nav {
+  padding: 1%;
+  background-color: #333;
+}
+
+nav .logo {
+  letter-spacing: 2px;
+  color: #FE5F00;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  font-size: x-large;
+  cursor: default;
+}
+
+nav ul {
+  padding: 1%;
+  border-radius: 10px;
+  background-color: #111;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
+
+nav ul li a {
+  color: #eee;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover {
+  color: #FE5F00;
+}
+
+.news {
+  margin: 5%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=style.css.map */

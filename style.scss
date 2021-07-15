@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body,html{
+    height: 100%;
+}
+/*
+### STICKY FOOTER ###
+*/
+main{
+    min-height: 100%;
+    margin-bottom: -120px;
+}
+main::after{
+    content: '';
+    display: block;
+}
+footer, main::after{
+    height: 120px;
+}
+
+nav, nav ul, .news{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+nav{
+    padding: 1%;
+    background-color: #333;
+    .logo{
+        letter-spacing: 2px;
+        color: #FE5F00;
+        flex: 0 1 30%;
+        font-size: x-large;
+        cursor: default;
+    }
+    ul{
+        padding: 1%;
+        border-radius: 10px;
+        background-color: #111;
+        flex: 0 1 30%;
+        li{
+            a{
+                color: #eee;
+                text-transform: uppercase;
+            }
+            a:hover{
+                color: #FE5F00;
+            }
+
+        }
+    }
+}
+.news{
+    margin: 5%;
+    justify-content:space-evenly;
+}
+
+
