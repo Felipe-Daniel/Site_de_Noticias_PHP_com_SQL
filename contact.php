@@ -16,10 +16,10 @@
     <main>
         <div class="title">FALE CONOSCO</div>
         <form action="">
-            <input type="text" name="" id="" placeholder="Nome">
-            <input type="email" name="" id="" placeholder="Email">
-            <input type="text" name="" id="" placeholder="Assunto">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" name="" id="" placeholder="Nome" required>
+            <input type="email" name="" id="" placeholder="Email" required>
+            <input type="text" name="" id="" placeholder="Assunto" required>
+            <textarea name="" id="" cols="30" rows="10" required></textarea>
         </form>
     </main>
     <?php

@@ -8,6 +8,11 @@
 }
 body,html{
     height: 100%;
+    
+}
+body{
+    background: #ddd;
+    overflow-x: hidden;
 }
 /*
 ### STICKY FOOTER ###
@@ -74,6 +79,9 @@ nav{
 .show-nav{
     left: 0 !important;
 }
+
+// ### FOOTER ###
+
 footer{
     background: #333;
     color: #FE5F00;
@@ -159,6 +167,7 @@ form {
 }
 
 // ### CONTACT ###
+
 #contact{
     text-align: center;
     .title{
@@ -172,7 +181,6 @@ form {
         border-radius: 20px;
         margin-bottom: 20px;
         position: relative;
-        }
         input, textarea{
             padding: 4% 2%;
             background: transparent;

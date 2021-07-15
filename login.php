@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet preload" href="style.css?v=1.3" as="style">
 </head>
-<body>
+<body id="login">
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <form action="login.php" method="post" id='login'>
+        <form action="inc/login.php" method="post" id='login'>
             <div class="title"></div>
             <div>
                 <label for="">Usuário</label>
-                <input type="text" name="" id="" placeholder="Insira seu email">
+                <input type="text" name="user" id="" placeholder="Insira seu email" required>
             </div>
             <div>
                 <label for="">Senha</label>
-                <input type="text" name="" id="" placeholder="Insira sua senha">
+                <input type="password" name="password" id="" placeholder="Insira sua senha" required>
             </div>
             <input type="submit" value="Login">
         </form>
