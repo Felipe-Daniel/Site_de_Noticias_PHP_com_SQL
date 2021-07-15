@@ -8,24 +8,19 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet preload" href="style.css?v=1.2" as="style">
 </head>
-<body>
+<body id="contact">
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <div class="news">
-            <div class="description"></div>
-            <div class="new">1</div>
-            <div class="new">2</div>
-            <div class="new">3</div>
-            <div class="new">4</div>
-            <div class="new">5</div>
-            <div class="new">6</div>
-            <div class="new">7</div>
-            <div class="new">8</div>
-            <div class="new">9</div>
-        </div>
+        <div class="title">FALE CONOSCO</div>
+        <form action="">
+            <input type="text" name="" id="" placeholder="Nome">
+            <input type="email" name="" id="" placeholder="Email">
+            <input type="text" name="" id="" placeholder="Assunto">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </form>
     </main>
     <?php
         include($IPATH . 'footer.php')

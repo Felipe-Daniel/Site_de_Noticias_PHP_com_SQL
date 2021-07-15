@@ -4,6 +4,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    border: none;
 }
 body,html{
     height: 100%;
@@ -25,24 +26,31 @@ footer, main::after{
 
 nav, nav ul, .news{
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
     flex-wrap: wrap;
+    
 }
+
+/*
+### NAV ###
+*/
 nav{
+    align-items: center;
     padding: 1%;
     background-color: #333;
+    min-height: 50px;
+    
     .logo{
         letter-spacing: 2px;
         color: #FE5F00;
-        flex: 0 1 30%;
         font-size: x-large;
         cursor: default;
     }
     ul{
-        padding: 1%;
+        padding: 1% 0;
+        width: 40%;
         border-radius: 10px;
-        background-color: #111;
-        flex: 0 1 30%;
+            background-color: #111;
         li{
             a{
                 color: #eee;
@@ -54,10 +62,189 @@ nav{
 
         }
     }
+    .burger{
+        display: none;
+        color: #eee;
+        font-size: 2.4em;
+        &:hover{
+            color: #FE5F00;
+        }
+    }
 }
-.news{
-    margin: 5%;
-    justify-content:space-evenly;
+.show-nav{
+    left: 0 !important;
+}
+footer{
+    background: #333;
+    color: #FE5F00;
+    div{
+        display: inline-block;
+        .footer-block{
+            display: block;
+            margin: 25px 0 25px 45px;
+            div:first-child{
+                font-weight: bolder;
+                font-size: 1.1;
+            }
+        }
+        div{
+            margin: 0.1% 0;
+        }
+
+    } 
+    .icons{
+        float: right;
+        margin: 45px;
+        i{
+            color: #FE5F00;
+            font-size: 2.4em;
+            margin: 0 10px;
+        }
+
+    }
 }
 
+// ### LOGIN ###
 
+form {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: #333;
+    color: #FE5F00;
+    box-shadow: 0 0 0 3px #FE5F00, 0 0 0 2px rgba(0,0,0, 0.3);
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 6%;
+    padding: 5% 1%;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    div{
+        display: flex;
+        margin-bottom: 5%;
+        flex-wrap: wrap;
+        align-content: center;
+        flex: 0 1 100%;
+        label{
+            flex: 0 1 100%;
+            margin: 5% 0;
+            font-size: large;
+        }
+        input{
+            padding: 4% 2%;
+            flex: 0 0 100%;
+            background: transparent;
+            border-bottom: 2px solid #FE5F00;
+            color: #eee;
+            
+        }
+    }
+    input[type="submit"]{
+        text-transform: uppercase;
+        background-color: #EB5E28;
+        color: #eee;
+        padding: 2% 12%;
+        border-radius: 40px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(255,255,255,0.3),
+                     0 3px 5px inset rgba(255, 250, 250, 0.3),
+                     0 -4px 5px inset rgba(0,0,0, 0.3);
+        &:hover{
+            background: #e96937;
+        }
+
+    }
+}
+
+// ### CONTACT ###
+#contact{
+    text-align: center;
+    .title{
+        color: #FE5F00;
+        font-size: 2em;
+        font-weight: bolder;
+        padding-top: 40px;
+        margin-bottom: -10px;
+    }
+    form{
+        border-radius: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        }
+        input, textarea{
+            padding: 4% 2%;
+            background: transparent;
+            border-bottom: 2px solid #FE5F00;
+            color: #eee;
+            width: 100%;
+            font-size: 1.3em;
+        }
+        input:nth-child(3){
+            margin-bottom: 4%;
+        }
+        textarea{
+            border: 2px solid #FE5F00;;
+        }
+    }
+}
+@media screen and (max-width: 1064px) {
+    nav ul{
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px) {
+    form{
+        width:80%
+    }
+    nav{
+        position: relative;
+        ul{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            left: 100%;
+            top: 45px;
+            width: 100%;
+            background: #333;
+            transition: all 0.3s ease;
+            li{
+
+                border-right: transparent;
+                border-radius: 0;
+                box-shadow: 0 2px 5px  rgba(255,255,255,0.3),
+                0 1px 5px inset rgba(255, 250, 250, 0.3),
+                0 -3px 5px  inset rgba(0,0,0, 0.7);
+                padding: 5% 0;
+                font-size: 1.4em;
+
+            }
+            
+        }
+        .burger{
+            display: flex;
+        }
+    }
+}
+@media screen and (max-width:478px){
+    footer{
+        height: 240px;
+        div{
+            display: block;
+            text-align: center;
+            margin-left: 0;
+            .footer-block{
+                margin: 0;
+                padding-top: 25px;
+            }
+
+        }
+        .icons{
+            float: none;
+
+        }
+    }
+}
