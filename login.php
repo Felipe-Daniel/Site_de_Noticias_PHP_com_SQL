@@ -20,13 +20,20 @@
         <form action="inc/login.php" method="post" id='login'>
             <div class="title"></div>
             <div>
-                <label for="">Usuário</label>
-                <input type="text" name="user" placeholder="Insira seu email" required>
+                <label for="user">Usuário</label>
+                <input type="text" name="user" placeholder="Insira seu nome" required>
             </div>
             <div>
-                <label for="">Senha</label>
+                <label for="password">Senha</label>
                 <input type="password" name="password" placeholder="Insira sua senha" required>
             </div>
+            <?php
+                if(isset($_SESSION['failed-login'])){
+                    echo '<div style="color:#FE5F00;font-size:1.2em;">Usuário ou senha incorreto</div>';
+                };
+                unset($_SESSION['failed-login']);
+                ?>
+                
             <input type="submit" value="Login">
         </form>
     </main>

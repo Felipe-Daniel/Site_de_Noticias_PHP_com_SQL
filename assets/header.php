@@ -22,11 +22,11 @@
                         <a>Perfil</a>
                         <ul>
                             <a href='update_user.php'><li>Atualizar Dados</li></a>
-                            <a><li>Atualizar Senha</li></a>
+                            <a href='update_password.php'><li>Atualizar Senha</li></a>
                         </ul>
                     </li>
                     <li class='hidden'><a href='update_user.php'>Atualizar Dados</a></li>
-                    <li class='hidden'><a>Atualizar Senha</a></li>";// one pair for full screen and one for mobile
+                    <li class='hidden'><a href='update_password.php'>Atualizar Senha</a></li>";// one pair for full screen and one for mobile
                 echo '<li><a href="inc/logout.php?token='.md5(session_id()).'">Sair</a></li>';
                 echo "<li class='username'>$user</li>";
             }

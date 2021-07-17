@@ -12,22 +12,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body id="update">
+
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <div class="title">Atualizar Dados</div>
+        <?php
+            if(isset($_SESSION['update-sucesses'])){
+                echo '<div class="title" style="color: #FE5F00;">Atualizado com sucesso</div>';
+            } else{
+                echo '<div class="title">Atualizar Dados</div>';
+            };
+            unset($_SESSION['update-sucesses']);
+        ?>
+        
         <?php
             include('inc/get.php');
-            $user = $_SESSION['username'];
-            $email = $_SESSION['email'];
-            $phone = $_SESSION['phone'];
         ?>
-            <form action="">
+            <form action="inc/update_user.php" method='POST'>
                 <div>
-                    <label for="name">Nome: </label>
-                    <input type="text" name="name" value=<?php echo"$user"?>>
+                    <label for="user">Nome: </label>
+                    <input type="text" name="user" value=<?php echo"$user"?>>
                 </div>
                 <div>
                     <label for="email">Email: </label>
@@ -35,9 +41,9 @@
                 </div>
                 <div>
                     <label for="phone">Telefone: </label>
-                    ­<input type="text" name="phone" value=<?php echo"$phone"?>>
+                    ­<input type="tel" name="phone" value=<?php echo"$phone"?>>
                 </div>
-                    <input type="submit" value="Enviar">    
+                    <input type="submit" value="Enviar" on>    
             </form>
 
     </main>

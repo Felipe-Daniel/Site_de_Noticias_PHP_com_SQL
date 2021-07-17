@@ -13,7 +13,9 @@
         header('location:../index.php');
         $_SESSION['username'] = $user;
     }else{
-        echo 'no';
+        $_SESSION['failed-login']=1;
+        header('location:../login.php');
+
     }
     mysqli_close($con);
 ?>
