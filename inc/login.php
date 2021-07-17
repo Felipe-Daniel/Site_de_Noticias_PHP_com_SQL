@@ -11,6 +11,7 @@
 
     if(mysqli_num_rows($s) == 1){
         header('location:../index.php');
+        $_SESSION['username'] = $user;
     }else{
         echo 'no';
     }

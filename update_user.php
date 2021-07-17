@@ -11,19 +11,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
-<body id="contact">
+<body id="update">
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <div class="title">FALE CONOSCO</div>
-        <form action="">
-            <input type="text" name="" id="" placeholder="Nome" required>
-            <input type="email" name="" id="" placeholder="Email" required>
-            <input type="text" name="" id="" placeholder="Assunto" required>
-            <textarea name="" id="" cols="30" rows="10" required></textarea>
-        </form>
+        <div class="title">Atualizar Dados</div>
+        <?php
+            include('inc/get.php');
+            $user = $_SESSION['username'];
+            $email = $_SESSION['email'];
+            $phone = $_SESSION['phone'];
+        ?>
+            <form action="">
+                <div>
+                    <label for="name">Nome: </label>
+                    <input type="text" name="name" value=<?php echo"$user"?>>
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" value=<?php echo"$email"?>>
+                </div>
+                <div>
+                    <label for="phone">Telefone: </label>
+                    ­<input type="text" name="phone" value=<?php echo"$phone"?>>
+                </div>
+                    <input type="submit" value="Enviar">    
+            </form>
+
     </main>
     <?php
         include($IPATH . 'footer.php')

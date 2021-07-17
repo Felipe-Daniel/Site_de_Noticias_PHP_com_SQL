@@ -13,6 +13,7 @@ body, html {
 }
 
 body {
+  font-family: 'Barlow', sans-serif;
   background: #ddd;
   overflow-x: hidden;
 }
@@ -54,6 +55,9 @@ nav {
   padding: 1%;
   background-color: #333;
   min-height: 50px;
+  font-weight: bold;
+  -webkit-box-shadow: 0 -3px 5px inset rgba(0, 0, 0, 0.5), 0 1px 5px inset rgba(255, 255, 255, 0.3);
+          box-shadow: 0 -3px 5px inset rgba(0, 0, 0, 0.5), 0 1px 5px inset rgba(255, 255, 255, 0.3);
 }
 
 nav .logo {
@@ -70,13 +74,57 @@ nav ul {
   background-color: #111;
 }
 
-nav ul li a {
+nav ul li {
+  position: relative;
+}
+
+nav ul li a, nav ul li div {
   color: #eee;
   text-transform: uppercase;
 }
 
 nav ul li a:hover {
   color: #FE5F00;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #111;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 10%;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+nav ul li ul li {
+  padding: 20px 20px;
+}
+
+nav ul li ul li:hover {
+  background: #FE5F00;
+}
+
+nav ul li ul a:hover {
+  color: #eee;
+}
+
+nav ul .hidden {
+  display: none;
+}
+
+nav ul .username {
+  color: #FE5F00;
+  text-transform: uppercase;
+  font-weight: bolder;
+  cursor: default;
+}
+
+nav ul #perfil {
+  cursor: pointer;
 }
 
 nav .burger {
@@ -93,7 +141,13 @@ nav .burger:hover {
   left: 0 !important;
 }
 
+.show-perfil {
+  display: block !important;
+}
+
 footer {
+  -webkit-box-shadow: 0 -3px 5px inset rgba(0, 0, 0, 0.5), 0 2px 5px inset rgba(255, 255, 255, 0.3);
+          box-shadow: 0 -3px 5px inset rgba(0, 0, 0, 0.5), 0 2px 5px inset rgba(255, 255, 255, 0.3);
   background: #333;
   color: #FE5F00;
 }
@@ -200,19 +254,18 @@ form input[type="submit"]:hover {
   background: #e96937;
 }
 
-#contact {
-  text-align: center;
-}
-
 #contact .title {
   color: #FE5F00;
   font-size: 2em;
   font-weight: bolder;
   padding-top: 40px;
   margin-bottom: -10px;
+  text-align: center;
 }
 
 #contact form {
+  text-align: center;
+  padding-top: 2%;
   border-radius: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -235,6 +288,46 @@ form input[type="submit"]:hover {
   border: 2px solid #FE5F00;
 }
 
+#update main .title {
+  color: #333;
+  font-size: 1.6em;
+  font-weight: bolder;
+  padding-top: 20px;
+  text-align: center;
+}
+
+#update main form {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 auto;
+  color: #333;
+  font-weight: bolder;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#update main form * {
+  width: 100%;
+}
+
+#update main form label {
+  margin-bottom: 0;
+}
+
+#update main form input {
+  color: #333;
+  padding: 2% 1%;
+  font-size: 1.4em;
+}
+
+#update main form input[type='submit'] {
+  color: #eee;
+  margin-top: 2%;
+}
+
 @media screen and (max-width: 1064px) {
   nav ul {
     width: 60%;
@@ -247,6 +340,7 @@ form input[type="submit"]:hover {
   }
   nav {
     position: relative;
+    z-index: 99;
   }
   nav ul {
     position: absolute;
@@ -271,10 +365,16 @@ form input[type="submit"]:hover {
   nav ul li {
     border-right: transparent;
     border-radius: 0;
-    -webkit-box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3), 0 1px 5px inset rgba(255, 250, 250, 0.3), 0 -3px 5px inset rgba(0, 0, 0, 0.7);
-            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3), 0 1px 5px inset rgba(255, 250, 250, 0.3), 0 -3px 5px inset rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0 1px 5px inset rgba(255, 250, 250, 0.3), 0 -2px 5px inset rgba(0, 0, 0, 0.7);
+            box-shadow: 0 1px 5px inset rgba(255, 250, 250, 0.3), 0 -2px 5px inset rgba(0, 0, 0, 0.7);
     padding: 5% 0;
     font-size: 1.4em;
+  }
+  nav ul #perfil {
+    display: none;
+  }
+  nav ul .hidden {
+    display: initial;
   }
   nav .burger {
     display: -webkit-box;
