@@ -256,6 +256,15 @@ form input[type="submit"]:hover {
   background: #e96937;
 }
 
+form select {
+  margin-top: 2%;
+  width: 100%;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #666;
+  height: 34px;
+}
+
 #contact .title {
   color: #FE5F00;
   font-size: 2em;
@@ -311,7 +320,7 @@ form input[type="submit"]:hover {
       align-content: center;
 }
 
-#update main form * {
+#update main form label, #update main form input, #update main form select, #update main form div {
   width: 100%;
 }
 

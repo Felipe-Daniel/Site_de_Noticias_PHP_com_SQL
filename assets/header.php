@@ -27,6 +27,10 @@
                     </li>
                     <li class='hidden'><a href='update_user.php'>Atualizar Dados</a></li>
                     <li class='hidden'><a href='update_password.php'>Atualizar Senha</a></li>";// one pair for full screen and one for mobile
+                include('inc/get.php');
+                if((isset($_SESSION['level'])) && ($_SESSION['level']>1)){
+                    echo "<li><a href='register.php'>ADM</a></li>";
+                };    
                 echo '<li><a href="inc/logout.php?token='.md5(session_id()).'">Sair</a></li>';
                 echo "<li class='username'>$user</li>";
             }

@@ -1,10 +1,14 @@
+<?php 
+    include("inc/level_check.php");
+    level_check(1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP TEST</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet preload" href="style.css?v=1.3" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,19 +36,19 @@
         <form action="inc/update_password.php" method='POST';>
             <div>
                 <label for="old_password">Senha: </label>
-                <input type="password" name="password" id="password" onkeyup='check()' minlength="3">
+                <input type="password" name="password" id="password" onkeyup='check()' minlength="3" required maxlength="255">
             </div>
             <div>
                 <label for="old_password">Senha novamente: </label>
-                <input type='password' name="confirm-password" id="confirm_password" onkeyup='check()' minlength="3">
+                <input type='password' name="confirm-password" id="confirm_password" onkeyup='check()' minlength="3" required maxlength="255">
                 <span id='message'></span>
             </div>
             <div>
                 <label for="new_password">Nova senha: </label>
-                ­<input type="password" name="new-password" minlength="3">
+                ­<input type="password" name="new-password" minlength="3" required maxlength="255">
                 
             </div>
-                <input type="submit" value="Enviar" id='submit' disabled='disabled'> 
+                <input type="submit" value="Enviar" id='submit'> 
         </form>
     </main>
     <script>

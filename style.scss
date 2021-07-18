@@ -204,7 +204,14 @@ form {
         &:hover{
             background: #e96937;
         }
-
+    }
+    select {
+        margin-top: 2%;
+        width: 100%;
+        padding: 5px 35px 5px 5px;
+        font-size: 16px;
+        border: 1px solid #666;
+        height: 34px;
     }
 }
 
@@ -264,7 +271,7 @@ form {
             color: #333;
             font-weight: bolder;
             align-content: center;
-            *{
+            label,input,select,div{
                 width: 100%;
             }
             label{
