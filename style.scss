@@ -289,6 +289,67 @@ form {
         }
     }
 }
+
+// ### MANGAGE USERS ###
+#manage-users{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-content: flex-start;
+    margin: 2%;
+    .user{
+        padding: 2%;
+        flex: 0 0 29%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: #666;
+        color: #eee;
+        border:1px solid  #FE5F00;
+        border-radius: 5px;
+        margin: 2%;
+        box-shadow: 0 -3px 5px inset rgba(0,0,0, 0.5),
+        0 3px 5px inset rgba(255,255,255,0.5);
+        div:first-child{
+            font-weight: 700;
+            font-size: 1.3em;
+            text-align: center;
+            justify-self: flex-start;
+            color: #ff8c49;
+        }
+        div{
+            padding: 2%;
+        }
+        :nth-child(6){
+            margin-bottom: 4%;
+        }
+        form{
+            margin-top: auto;
+            overflow: initial;
+            display: block;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 0;
+            background: none;
+            box-shadow: none;
+            width: initial;
+            border-radius: 0;
+            margin: 2%;
+            input{
+                
+                border-radius: 20px;
+                background: #333;
+                box-shadow: 0 -3px 5px inset rgba(0,0,0, 0.5),
+                0 1px 5px inset rgba(255,255,255,0.5);
+                font-weight: 700;
+            &:hover{
+                background: #444;
+            }
+            }
+            
+        }
+    }
+}
 @media screen and (max-width: 1064px) {
     nav ul{
         width: 60%;
@@ -330,6 +391,11 @@ form {
         }
         .burger{
             display: flex;
+        }
+    }
+    #manage-users{
+        .user{
+            flex: 1 0 40%;
         }
     }
 }

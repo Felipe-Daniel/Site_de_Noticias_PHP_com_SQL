@@ -1,8 +1,5 @@
 <?php
-    if(!isset($_SESSION)){
-        session_start();
-    }
-    $con = mysqli_connect('localhost','root','','news');
+    include('connect.php');
     $user = $_SESSION['username'];
 
     if(isset($_POST['new-password'])){
