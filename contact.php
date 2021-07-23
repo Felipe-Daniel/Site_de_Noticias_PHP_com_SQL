@@ -13,7 +13,7 @@
 </head>
 <body id="contact">
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         include($IPATH . "header.php")
     ?>
     <main>

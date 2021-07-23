@@ -1,3 +1,7 @@
+<?php
+    define($__CONFIG__, true);
+    require_once('inc/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
 </head>
 <body>
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         include($IPATH . "header.php")
     ?>
     <main>

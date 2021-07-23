@@ -1,7 +1,3 @@
-<?php 
-    include("inc/level_check.php");
-    level_check(1);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,30 +13,18 @@
 </head>
 <body id="update">
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <?php
-        if(isset($_SESSION['update-sucesses'])){
-            echo '<div class="title" style="color: #FE5F00;">Modificado com sucesso</div>';
-        } else{
-            echo '<div class="title">Mudar senha</div>';
-        };
-        unset($_SESSION['update-sucesses']);
-        ?>
-
-        <?php
-            include('inc/get.php');
-        ?>
         <form action="inc/update_password.php" method='POST';>
             <div>
                 <label for="old_password">Senha: </label>
-                <input type="password" name="password" id="password" onkeyup='check()' minlength="3" required maxlength="255">
+                <input type="password" name="password" id="password"  minlength="3" required maxlength="255">
             </div>
             <div>
                 <label for="old_password">Senha novamente: </label>
-                <input type='password' name="confirm-password" id="confirm_password" onkeyup='check()' minlength="3" required maxlength="255">
+                <input type='password' name="confirm-password" id="confirm_password" minlength="3" required maxlength="255">
                 <span id='message'></span>
             </div>
             <div>
@@ -52,7 +36,7 @@
         </form>
     </main>
     <script>
-        // ### confirm passoword script ###
+        // Confirm password script
         var check = function() {
             if (document.getElementById('password').value ==
                 document.getElementById('confirm_password').value) {

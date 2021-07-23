@@ -13,11 +13,11 @@
 </head>
 <body id="login">
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <form action="inc/login.php" method="post" id='login'>
+        <form action="inc/login.php" method="post" id='login_form'>
             <div class="title"></div>
             <div>
                 <label for="user">Usuário</label>
@@ -27,18 +27,30 @@
                 <label for="password">Senha</label>
                 <input type="password" name="password" placeholder="Insira sua senha" required maxlength="255">
             </div>
-            <?php
-                if(isset($_SESSION['failed-login'])){
-                    echo '<div style="color:#FE5F00;font-size:1.2em;">Usuário ou senha incorreto</div>';
-                };
-                unset($_SESSION['failed-login']);
-                ?>
-                
             <input type="submit" value="Login">
         </form>
     </main>
     <?php
         include($IPATH . 'footer.php')
     ?>
+    <script>
+        document.getElementById('login_form').addEventListener('submit', (e)=>{
+                e.preventDefault();    //stop form from submitting
+
+                // Get form values
+                dataObj = {
+                    user: e.querySelector('form[type="text"]').val(),
+                    password: e.querySelector('form[type="password"]').val()
+                } 
+                
+                // send AJAX using pure javascript
+                xhr = new XMLHttpRequest();
+                xhr.open('POST', 'inc/registration/login.php');
+                xhr.setRequestHeader('Content-Type', 'aplication/json;charset=UTF-8');
+                xhr.send(dataObj);
+
+        });
+    </script>
 </body>
+
 </html>

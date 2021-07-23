@@ -14,19 +14,10 @@
 <body id="update">
 
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         include($IPATH . "header.php")
     ?>
     <main>
-        <?php
-            if(isset($_SESSION['update-sucesses'])){
-                echo '<div class="title" style="color: #FE5F00;">Atualizado com sucesso</div>';
-            } else{
-                echo '<div class="title">Atualizar Dados</div>';
-            };
-            unset($_SESSION['update-sucesses']);
-        ?>
-        
         <?php
             include('inc/get.php');
         ?>

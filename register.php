@@ -18,7 +18,6 @@
 <body id="update">
 
     <?php
-        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/assets/";
         include($IPATH . "header.php")
     ?>
     <main>
