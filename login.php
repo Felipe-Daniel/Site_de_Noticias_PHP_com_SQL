@@ -1,3 +1,8 @@
+<?php
+    define('__CONFIG__', true);
+    require_once('inc/config.php');
+    Check::login_check();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,47 +15,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body id="login">
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
-        include($IPATH . "header.php")
+        require_once($IPATH . "header.php")
     ?>
     <main>
-        <form action="inc/login.php" method="post" id='login_form'>
+        <form method="post" id='form' action='inc/login.php'>
             <div class="title"></div>
             <div>
                 <label for="user">Usuário</label>
-                <input type="text" name="user" placeholder="Insira seu nome" required maxlength="255">
+                <input type="text" name="user" placeholder="Insira seu nome" required maxlength="255" value="adm">
             </div>
             <div>
                 <label for="password">Senha</label>
-                <input type="password" name="password" placeholder="Insira sua senha" required maxlength="255">
+                <input type="password" name="password" placeholder="Insira sua senha" required maxlength="255" value="adm">
             </div>
             <input type="submit" value="Login">
+            <div id="response"></div>
         </form>
     </main>
     <?php
-        include($IPATH . 'footer.php')
+        require_once($IPATH . 'footer.php')
     ?>
-    <script>
-        document.getElementById('login_form').addEventListener('submit', (e)=>{
-                e.preventDefault();    //stop form from submitting
-
-                // Get form values
-                dataObj = {
-                    user: e.querySelector('form[type="text"]').val(),
-                    password: e.querySelector('form[type="password"]').val()
-                } 
-                
-                // send AJAX using pure javascript
-                xhr = new XMLHttpRequest();
-                xhr.open('POST', 'inc/registration/login.php');
-                xhr.setRequestHeader('Content-Type', 'aplication/json;charset=UTF-8');
-                xhr.send(dataObj);
-
-        });
-    </script>
+    <script src="inc/js/ajax.js"></script>
 </body>
 
 </html>

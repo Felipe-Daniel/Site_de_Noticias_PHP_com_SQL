@@ -1,6 +1,7 @@
-<?php 
-    include("inc/level_check.php");
-    level_check(3);
+<?php
+    define('__CONFIG__', true);
+    require_once('inc/config.php');
+    Check::level_check(3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,59 +15,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body id="update">
 
     <?php
-        include($IPATH . "header.php")
+        $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
+        require_once($IPATH . "header.php")
     ?>
     <main>
-        <?php
-            if(isset($_SESSION['user-created'])){
-                $user_created= $_SESSION['user-created'];
-                if($user_created==1){
-                    echo '<div class="title" style="color: #FE5F00;font-weight:500;">Usuário criado com sucesso</div>';
-                } else{
-                    echo '<div class="title" style="font-weight:500;font-size:1.2em;"><i style="color:#FE5F00" class="fas fa-exclamation-triangle"></i>&nbsp&nbsp&nbspNome de usuário já esta sendo utilizado</div>';
-                };
-            }
-            unset($_SESSION['user-created']);
-            
-        ?>
-        <form action="inc/registration.php" method='POST'>
+        <form action="inc/registration.php" method='POST' id="register">
             <div>
                 <label for="user">Nome: </label>
-                <input type="text" name="user" required maxlength="255">
+                <input type="text" name="user" required maxlength="255" value="abcd">
             </div>
             <div>
                 <label for="password">Senha: </label>
-                ­<input type="password" name="password" required maxlength="255">
+                ­<input type="password" name="password" required maxlength="255" value="abcd">
             </div>
             <div>
                 <label for="password">Nível de autoridade: </label>
                 ­<select name="level" required>
-                    <option disabled selected>-- Selecione nível --</option>
+                    <option disabled selected value="">-- Selecione nível --</option>
                     <option value="1">Usuário</option>
-                    <option value="2">Manutenção</option>
+                    <option value='2'>Manutenção</option>
                     <option value="3">Adiministrador</option>
                 </select>
             </div>
             <div>
                 <label for="email">Email: </label>
-                <input type="email" name="email" required maxlength="255">
+                <input type="email" name="email" required maxlength="255" value="abcd@gmail.com">
             </div>
             <div>
                 <label for="phone">Telefone: </label>
-                ­<input type="tel" name="phone" required maxlength="255">
+                ­<input type="tel" name="phone" required maxlength="255" value="00000000">
             </div>
-                
-
             <input type="submit" value="Enviar"> 
+            
         </form>
+        <div id='response'></div>
 
     </main>
     <?php
-        include($IPATH . 'footer.php')
+        require_once($IPATH . 'footer.php')
     ?>
+    <script src="inc/js/ajax.js"></script>
 </body>
 </html>

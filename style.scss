@@ -93,8 +93,6 @@ nav{
         }
         .username{
             color: #FE5F00;
-            text-transform: uppercase;
-            font-weight: bolder;
             cursor: default;
         }
         #perfil{
@@ -177,7 +175,7 @@ form {
         flex: 0 1 100%;
         label{
             flex: 0 1 100%;
-            margin: 5% 0;
+            margin: 1% 0;
             font-size: large;
         }
         input{
@@ -213,6 +211,12 @@ form {
         border: 1px solid #666;
         height: 34px;
     }
+}
+#response{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 5%;
 }
 
 // ### CONTACT ###

@@ -1,13 +1,22 @@
 <?php
-    $token = md5(session_id());
-    if(isset($_GET['token']) && $_GET['token'] === $token) {
-    // limpe tudo que for necessário na saída.
-    // Eu geralmente não destruo a seção, mas invalido os dados da mesma
-    // para evitar algum "necromancer" recuperar dados. Mas simplifiquemos:
-    session_destroy();
-    header("location: ../index.php");
-    exit();
-    } else {
-    echo '<a href="doLogout.php?token='.$token.'>Confirmar logout</a>';
-    }
+// Initialize the session.
+// If you are using session_name("something"), don't forget it now!
+session_start();
+
+// Unset all of the session variables.
+$_SESSION = array();
+
+// If it's desired to kill the session, also delete the session cookie.
+// Note: This will destroy the session, and not just the session data!
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+// Finally, destroy the session.
+session_destroy();
+header('location: ../index.php')
 ?>

@@ -1,3 +1,7 @@
+<?php
+    define('__CONFIG__', true);
+    require_once('inc/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +19,10 @@
 
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
-        include($IPATH . "header.php")
+        require_once($IPATH . "header.php")
     ?>
     <main>
-        <?php
-            include('inc/get.php');
-        ?>
-            <form action="inc/update_user.php" method='POST'>
+            <form action="inc/update_user.php" method='POST' id="update_user">
                 <div>
                     <label for="user">Nome: </label>
                     <input type="text" name="user" value=<?php echo"$user"?> required maxlength="255">
@@ -39,7 +40,7 @@
 
     </main>
     <?php
-        include($IPATH . 'footer.php')
+        require_once($IPATH . 'footer.php')
     ?>
 </body>
 </html>

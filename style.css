@@ -118,8 +118,6 @@ nav ul .hidden {
 
 nav ul .username {
   color: #FE5F00;
-  text-transform: uppercase;
-  font-weight: bolder;
   cursor: default;
 }
 
@@ -225,7 +223,7 @@ form div label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
-  margin: 5% 0;
+  margin: 1% 0;
   font-size: large;
 }
 
@@ -263,6 +261,13 @@ form select {
   font-size: 16px;
   border: 1px solid #666;
   height: 34px;
+}
+
+#response {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 5%;
 }
 
 #contact .title {

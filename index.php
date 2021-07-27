@@ -1,5 +1,5 @@
 <?php
-    define($__CONFIG__, true);
+    define('__CONFIG__', true);
     require_once('inc/config.php');
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 <body>
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
-        include($IPATH . "header.php")
+        require_once($IPATH . "header.php")
     ?>
     <main>
         <div class="news">
@@ -35,7 +35,7 @@
         </div>
     </main>
     <?php
-        include($IPATH . 'footer.php')
+        require_once($IPATH . 'footer.php')
     ?>
 </body>
 </html>
