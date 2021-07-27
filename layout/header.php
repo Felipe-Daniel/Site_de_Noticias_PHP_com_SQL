@@ -14,12 +14,12 @@
             <li id='perfil'>
             <a>Perfil</a>
                 <ul> <!-- this one is for desktop -->
-                    <a href='update_user.php'><li>Atualizar Dados</li></a>
+                    <a href='update_data.php'><li>Atualizar Dados</li></a>
                     <a href='update_password.php'><li>Atualizar Senha</li></a>
                 </ul>
             </li>
             <!--those ones are for mobile -->
-            <li class='hidden'><a href='update_user.php'>Atualizar Dados</a></li>
+            <li class='hidden'><a href='update_data.php'>Atualizar Dados</a></li>
             <li class='hidden'><a href='update_password.php'>Atualizar Senha</a></li>
             <script>
                 perfil = document.getElementById('perfil')

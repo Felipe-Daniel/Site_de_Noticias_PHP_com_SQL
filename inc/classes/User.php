@@ -24,16 +24,16 @@ if(!defined('__CONFIG__')) {
             ));
 
             if($user_data->rowCount() == 1) {
-                $user = $user_data->fetch(PDO::FETCH_OBJ);
-                $this->user 		= $user->user;
-                $this->password 	= $user->password;
-                $this->level 		= $user->level;
-                $this->email 		= $user->email;
-                $this->phone 		= $user->phone;
+                $user_data = $user_data->fetch(PDO::FETCH_OBJ);
+                $this->user 		= $user_data->user;
+                $this->password 	= $user_data->password;
+                $this->level 		= $user_data->level;
+                $this->email 		= $user_data->email;
+                $this->phone 		= $user_data->phone;
             } else {
                 // No user.
                 // Redirect to to logout.
-                header("Location: inc/logout.php"); exit;
+                header("Location: logout.php"); exit;
             }
         }
     	public static function user_exist($user) {

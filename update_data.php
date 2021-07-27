@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body id="update">
 
@@ -21,26 +22,27 @@
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         require_once($IPATH . "header.php")
     ?>
+    <?php
+        $user_data = new User($_SESSION['user'])
+    ?>
     <main>
-            <form action="inc/update_user.php" method='POST' id="update_user">
-                <div>
-                    <label for="user">Nome: </label>
-                    <input type="text" name="user" value=<?php echo"$user"?> required maxlength="255">
-                </div>
+            <form action="inc/update_data.php" method='POST' id="update_data">
                 <div>
                     <label for="email">Email: </label>
-                    <input type="email" name="email" value=<?php echo"$email"?> required maxlength="255">
+                    <input type="email" name="email" id='email'value=<?php echo"$user_data->email"?> required maxlength="255">
                 </div>
                 <div>
                     <label for="phone">Telefone: </label>
-                    ­<input type="tel" name="phone" value=<?php echo"$phone"?> required maxlength="255">
+                    ­<input type="tel" name="phone" id='phone'value=<?php echo"$user_data->phone"?> required maxlength="255">
                 </div>
                     <input type="submit" value="Enviar" on>    
             </form>
+            <div id="response"></div>
 
     </main>
     <?php
         require_once($IPATH . 'footer.php')
     ?>
+    <script src="inc/js/ajax.js"></script>
 </body>
 </html>

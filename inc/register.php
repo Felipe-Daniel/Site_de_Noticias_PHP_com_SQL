@@ -1,11 +1,10 @@
 <?php
     // If is not accessing from our page, then don't load the file
-    define('__CONFIG__',true);
+    define('__CONFIG__', true);
     require_once('config.php');
 
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $con = DB::getConnection();
-        
+
         $user = Filter::String($_POST['user']);
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
