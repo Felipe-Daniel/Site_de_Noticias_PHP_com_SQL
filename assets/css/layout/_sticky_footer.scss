@@ -1,0 +1,11 @@
+main{
+    min-height: 100%;
+    margin-bottom: -120px;
+}
+main::after{
+    content: '';
+    display: block;
+}
+footer, main::after{
+    height: 120px;
+}

@@ -1,48 +1,67 @@
-<nav>
+<?php
+    define('__CONFIG__', true);
+    require_once('inc/config.php');
+?>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP TEST</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet preload" href="assets/css/main.css?v=1.3" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <header class='l-header'>
+        <div class="logo">
+            Clubes Brasil
+        </div>
+        <div class='nav'>
+            <a class='nav__item' class='nav__item' href="../index.php">Home</a>
+            <a class='nav__item' href="#">Notícias</a>
+            <a class='nav__item' href="../contact">Contatos</a>
+            
+            <?php if(!isset($_SESSION['user'])){?>
+                    <a class='nav__item' href='../login.php'>Login</a>
+            <?php }else{?>
+                <div class='dropdown-btn nav__item'>
+                Perfil
+                    <div class='dropdown is-hidden'> <!-- this one is for desktop -->
+                        <a class=' dropdown__item' href='update_data.php'>Atualizar Dados</a>
+                        <a class=' dropdown__item' href='update_password.php'>Atualizar Senha</a>
+                    </div>
+            </div>
+                
+                <!--those ones are for mobile -->
+                <a class='nav__item is-hidden' href='update_data.php'>Atualizar Dados</a>
+                <a class='nav__item is-hidden' href='update_password.php'>Atualizar Senha</a>
+                <script>
+                    perfil = document.querySelector('.dropdown-btn')
+                    perfil.addEventListener('click',()=>{   
+                        document.querySelector('.dropdown').classList.toggle('is-hidden')
+                    })
+                </script>
+                </li>
+            <?php };?>
 
-    <div class="logo">
-        Clubes Brasil
-    </div>
-    <ul>
-        <li><a href="../index.php">Home</a></li>
-        <li><a href="#">Notícias</a></li>
-        <li><a href="../contact">Contatos</a></li>
-        
-        <?php if(!isset($_SESSION['user'])){?>
-                <li><a href='../login.php'>Login</a></li>
-        <?php }else{?>
-            <li id='perfil'>
-            <a>Perfil</a>
-                <ul> <!-- this one is for desktop -->
-                    <a href='update_data.php'><li>Atualizar Dados</li></a>
-                    <a href='update_password.php'><li>Atualizar Senha</li></a>
-                </ul>
-            </li>
-            <!--those ones are for mobile -->
-            <li class='hidden'><a href='update_data.php'>Atualizar Dados</a></li>
-            <li class='hidden'><a href='update_password.php'>Atualizar Senha</a></li>
-            <script>
-                perfil = document.getElementById('perfil')
-                perfil.addEventListener('click',()=>{   
-                    document.querySelector('#perfil ul').classList.toggle('show-perfil')
-                })
-            </script>
-        <?php };?>
+            <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>1)){?>
+                    <a class='nav__item' href='register.php'>ADM</a>
+            <?php };?>
 
-        <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>1)){?>
-                <li><a href='register.php'>ADM</a></li>
-        <?php };?>
-
-        <?php if(isset($_SESSION['user'])){?>
-            <li><a href="inc/logout.php?token='.md5(session_id()).'">Sair</a></li>
-            <li><a class="username"><?php echo $_SESSION['user']?></a></li>
-        <?php };?>
-    </ul>
-    <i class="burger fas fa-bars"></i>
-</nav>
-<script>
-    burger = document.querySelector('.burger')
-    burger.addEventListener('click',()=>{   
-        document.querySelector('nav ul').classList.toggle('show-nav')
-    })
-</script>
+            <?php if(isset($_SESSION['user'])){?>
+                <a class='nav__item' href="inc/logout.php?token='.md5(session_id()).'">Sair</a>
+                <a class="nav__item username"><?php echo $_SESSION['user']?></a>
+            <?php };?>
+            </div>
+        <i class="burger fas fa-bars"></i>
+    </header>
+    <script>
+        burger = document.querySelector('.burger')
+        burger.addEventListener('click',()=>{   
+            document.querySelector('.nav').classList.toggle('is-onscreen')
+        })
+    </script>

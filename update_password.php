@@ -22,28 +22,28 @@
         require_once($IPATH . "header.php")
     ?>
     <main>
-        <form action="inc/update_password.php" method='POST' id='update_password';>
-            <div>
+        <form action="inc/update_password.php" method='POST' id='update_password' class='update-form';>
+            <div class='form-block'>
                 <label for="old_password">Senha: </label>
                 <input type="password" name="old_password" id="old_password" minlength="3" required maxlength="255">
             </div>
-            <div>
+            <div class='form-block'>
                 <label for="old_password">Senha novamente: </label>
                 <input type='password' name="old_password_again" id="old_password_again" minlength="3" required maxlength="255">
                 <span id='message'></span>
             </div>
-            <div>
+            <div class='form-block'>
                 <label for="new_password">Nova senha: </label>
                 ­<input type="password" name="new_password" id="new_password" required maxlength="255">
                 
             </div>
-                <input type="submit" value="Enviar" id='submit'> 
+                <input type="submit" value="Enviar" id='submit' class="submit-btn"> 
         </form>
         <div id="response"></div>
     </main>
     <?php
         require_once($IPATH . 'footer.php')
     ?>
-    <script src="inc/js/ajax.js"></script>
+    <script src="assets/js/ajax.js"></script>
 </body>
 </html>

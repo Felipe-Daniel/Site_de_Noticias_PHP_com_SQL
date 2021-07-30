@@ -1,13 +1,7 @@
-<footer>
-    <div>
-        <div class="footer-block">
-            <div>Endereço: </div>
-            <div>Rua, 1 nº1 - RJ</div>
-        </div>
-        <div class="footer-block">
-            <div>Telefone: </div>
-            <div>(21)99999-9999</div>
-        </div>
+<footer class=l-footer>
+    <div class='information'>
+        <div>Endereço: Rua, 1 nº1 - RJ</div>
+        <div>Telefone: (21)99999-9999</div>
     </div>
 
     <div class="icons">
@@ -16,3 +10,4 @@
         <a href="http://"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
+</body>

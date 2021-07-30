@@ -26,16 +26,16 @@
         $user_data = new User($_SESSION['user'])
     ?>
     <main>
-            <form action="inc/update_data.php" method='POST' id="update_data">
-                <div>
+            <form action="inc/update_data.php" method='POST' id="update_data" class='update-form'>
+                <div class="form-block">
                     <label for="email">Email: </label>
                     <input type="email" name="email" id='email'value=<?php echo"$user_data->email"?> required maxlength="255">
                 </div>
-                <div>
+                <div class="form-block">
                     <label for="phone">Telefone: </label>
                     ­<input type="tel" name="phone" id='phone'value=<?php echo"$user_data->phone"?> required maxlength="255">
                 </div>
-                    <input type="submit" value="Enviar" on>    
+                    <input type="submit" value="Enviar" class="submit-btn">    
             </form>
             <div id="response"></div>
 
@@ -43,6 +43,6 @@
     <?php
         require_once($IPATH . 'footer.php')
     ?>
-    <script src="inc/js/ajax.js"></script>
+    <script src="assets/js/ajax.js"></script>
 </body>
 </html>
