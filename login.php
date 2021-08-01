@@ -14,7 +14,7 @@
                 <input type="password" name="password" placeholder="Insira sua senha" required maxlength="255" value="adm">
             </div>
             <input type="submit" value="Login" class='submit-btn'>
-            <div id="response"></div>
+            <div id="response" class="response"></div>
         </form>
     </main>
     <script src="../assets/js/ajax.js"></script>

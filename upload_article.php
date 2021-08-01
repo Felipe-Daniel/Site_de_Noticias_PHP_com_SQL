@@ -10,7 +10,7 @@
         <textarea name="text" cols="30" rows="20" placeholder='CONTEÚDO' required></textarea>
         <input type="file" name="iamge">
         <input type="submit" value="Publicar" class="submit-btn">
-        <div id="response"></div>
+        <div id="response" class="response"></div>
     </form>
 </main>
 <script src="../assets/js/ajax.js"></script>

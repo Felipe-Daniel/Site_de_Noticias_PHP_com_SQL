@@ -17,7 +17,7 @@
                 </div>
                     <input type="submit" value="Enviar" class="submit-btn">    
             </form>
-            <div id="response"></div>
+            <div id="response" class="response"></div>
 
     </main>
     <script src="../assets/js/ajax.js"></script>
