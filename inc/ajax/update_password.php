@@ -1,8 +1,9 @@
 <?php
     // If is not accessing from our page, then don't load the file
     define('__CONFIG__', true);
-    require_once('config.php');
+    require_once('../config.php');
 
+    
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $user_data = new User($_SESSION['user']) ;
 

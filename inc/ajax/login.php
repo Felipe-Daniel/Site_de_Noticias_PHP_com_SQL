@@ -1,8 +1,9 @@
 <?php
     // If is not accessing from our page, then don't load the file
     define('__CONFIG__', true);
-    require_once('config.php');
+    require_once('../config.php');
 
+    
     if($_SERVER['REQUEST_METHOD']=='POST'){
 
         $user_data = new User($_POST['user']);
@@ -17,7 +18,7 @@
 
                 $_SESSION['user']=$user_data->user;
                 $_SESSION['level']=$user_data->level;
-                $return['redirect'] = '../index.php';
+                $return['redirect'] = 'index.php';
             } else{
                 $return['error'] = 'Senha incorreta';
             }

@@ -1,10 +1,9 @@
-</head>
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         require_once($IPATH . "header.php")
     ?>
     <main>
-        <form method="post" id='login' action='inc/login.php' class='login-form'>
+        <form method="post" action='inc/ajax/login.php' class='login-form'>
             <div class="title"></div>
             <div class='form-block'>
                 <label for="user">Usuário</label>
@@ -18,9 +17,7 @@
             <div id="response"></div>
         </form>
     </main>
+    <script src="../assets/js/ajax.js"></script>
     <?php
         require_once($IPATH . 'footer.php')
     ?>
-    <script src="assets/js/ajax.js"></script>
-
-</html>

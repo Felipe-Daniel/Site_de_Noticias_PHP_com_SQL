@@ -2,6 +2,8 @@
     .contact-form{
         @include form;
         background-color: #333;
+        box-shadow:  0 -2px 5px 2px rgba(0,0,0, 0.7) inset,
+                    0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
         padding-top: 2%;
         border-radius: 20px;
         margin-bottom: 20px;
@@ -11,8 +13,8 @@
             background: transparent;
             border-bottom: 2px solid #FE5F00;
             color: #eee;
-            width: 100%;
             font-size: 1.3em;
+            width: 100%;
         }
         input:nth-child(3){
             margin-bottom: 4%;

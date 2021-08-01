@@ -127,6 +127,7 @@ footer, main::after {
 @media screen and (max-width: 768px) {
   .nav {
     position: absolute;
+    z-index: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -175,12 +176,14 @@ footer, main::after {
 
 .dropdown {
   position: absolute;
+  z-index: 1;
   background: #111;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 10%;
   right: 50%;
+  border-radius: 5px;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
@@ -190,14 +193,11 @@ footer, main::after {
   color: #eee;
   text-transform: uppercase;
   padding: 20px 20px;
+  border-radius: 5px;
 }
 
 .dropdown__item:hover {
   background: #FE5F00;
-}
-
-.dropdown > a {
-  color: #eee;
 }
 
 @media screen and (max-width: 768px) {
@@ -321,6 +321,8 @@ footer, main::after {
   margin-top: 4%;
   padding: 3% 2%;
   background-color: #333;
+  -webkit-box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
+          box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
   padding-top: 2%;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -338,8 +340,8 @@ footer, main::after {
   background: transparent;
   border-bottom: 2px solid #FE5F00;
   color: #eee;
-  width: 100%;
   font-size: 1.3em;
+  width: 100%;
 }
 
 .contact-form input:nth-child(3) {
@@ -408,7 +410,7 @@ footer, main::after {
   }
 }
 
-.update-form label, .update-form input, .update-form select, .update-form div {
+.update-form > * {
   width: 100%;
 }
 
@@ -425,6 +427,76 @@ footer, main::after {
 .update-form input[type='submit'] {
   color: #eee;
   margin-top: 2%;
+}
+
+.update-article-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 4%;
+  padding: 3% 2%;
+  background-color: #eee;
+  color: #333;
+  width: 90%;
+  -webkit-box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
+          box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
+  padding-top: 2%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .update-article-form {
+    width: 80%;
+  }
+}
+
+.update-article-form > * {
+  width: 100%;
+}
+
+.update-article-form input[type=submit] {
+  font-size: 2em;
+  padding: 1% 2%;
+}
+
+.update-article-form input[type=text], .update-article-form textarea {
+  background: transparent;
+  font-size: 1.3em;
+  margin-bottom: 2%;
+  border: 2px solid #FE5F00;
+  padding: 1% 2%;
+  outline: none;
+  font-family: serif;
+}
+
+.update-article-form input[type=text] {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.update-article-form ::-webkit-file-upload-button {
+  border-radius: 50px;
+  padding: 1% 5%;
+  margin-bottom: 2%;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 768px) {
+  .update-article-form ::-webkit-file-upload-button {
+    font-size: 2em;
+  }
 }
 
 .is-hidden {
