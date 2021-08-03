@@ -15,6 +15,7 @@
             </div>
             <input type="submit" value="Login" class='submit-btn'>
             <div id="response" class="response"></div>
+            
         </form>
     </main>
     <script src="../assets/js/ajax.js"></script>

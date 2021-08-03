@@ -3,19 +3,16 @@
         require_once($IPATH . "header.php")
     ?>
     <main>
-        <div class="news">
-            <div class="description"></div>
-            <div class="new">1</div>
-            <div class="new">2</div>
-            <div class="new">3</div>
-            <div class="new">4</div>
-            <div class="new">5</div>
-            <div class="new">6</div>
-            <div class="new">7</div>
-            <div class="new">8</div>
-            <div class="new">9</div>
+    
+        <div id="articles" class='articles'>
         </div>
+        <script src="assets/js/pagination.js"></script>
+        <script src="assets/js/articles.js"></script>
+        <script src="assets/js/content_ajax.js"></script>
+        <ul class='pagination' id="pagination"> <!--pages or li are comes from javascript --> </ul>
+        
     </main>
+    
     <?php
         require_once($IPATH . 'footer.php')
     ?>

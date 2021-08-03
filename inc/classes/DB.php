@@ -2,7 +2,7 @@
 
 // If there is no constant defined called __CONFIG__, do not load this file 
 if(!defined('__CONFIG__')) {
-	exit('You do not have a config file');
+	die('You do not have a config file');
 }
 
 class DB {
@@ -13,12 +13,12 @@ class DB {
 
 		try {
 
-			self::$con = new PDO( 'mysql:host=localhost;dbname=news', 'root', '' );
+			self::$con = new PDO( 'mysql:host=localhost;dbname=news;charset=utf8mb4', 'root', '' );
 			self::$con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			self::$con->setAttribute( PDO::ATTR_PERSISTENT, false );
 
 		} catch (PDOException $e) {
-			echo "Could not connect to database."; exit;
+			echo "Could not connect to database."; die;
 		}
 
 	}

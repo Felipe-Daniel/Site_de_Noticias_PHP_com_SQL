@@ -2,7 +2,7 @@
 
 // If there is no constant defined called __CONFIG__, do not load this file 
 if(!defined('__CONFIG__')) {
-	exit('You do not have a config file');
+	die('You do not have a config file');
 }
 
     class User {
@@ -33,7 +33,6 @@ if(!defined('__CONFIG__')) {
             } else {
                 // No user.
                 // Redirect to to logout.
-                header("Location: logout.php"); exit;
             }
         }
     	public static function user_exist($user) {

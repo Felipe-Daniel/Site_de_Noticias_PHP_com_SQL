@@ -1,9 +1,9 @@
 const response = document.getElementById('response')
 response.style.display = 'none;'
-document.querySelector('form').addEventListener('submit', (e)=>{
+const form =document.querySelector('form')
+form.addEventListener('submit', (e)=>{
     e.preventDefault();    //stop form from submitting
 
-    form = document.querySelector('form')
     let formData = new FormData(form)
     
     var request = new XMLHttpRequest();

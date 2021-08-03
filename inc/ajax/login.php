@@ -10,7 +10,7 @@
         $return = [];
         $user = Filter::String($_POST['user']);
         $password = $_POST['password'];
-
+        
         if(User::user_exist($user)){
             $user_data = new User($_POST['user']);
             $hash = $user_data->password;
@@ -25,7 +25,7 @@
         }else{
             $return['error'] = "Você não possui uma conta.";
         };
-        echo json_encode($return, JSON_PRETTY_PRINT); exit;
+        echo json_encode($return, JSON_PRETTY_PRINT); die;
     };
 
 ?>

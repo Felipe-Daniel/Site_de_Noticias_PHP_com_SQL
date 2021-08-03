@@ -17,8 +17,9 @@
                 <label for="new_password">Nova senha: </label>
                 ­<input type="password" name="new_password" required maxlength="255">
             </div>
-                <input type="submit" value="Enviar" class="submit-btn">
             <div id="response" class="response"></div>
+                <input type="submit" value="Enviar" class="submit-btn">
+           
         </form>
         
     </main>

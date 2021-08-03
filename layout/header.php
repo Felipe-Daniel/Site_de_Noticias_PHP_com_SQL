@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class='l-header'>
@@ -28,28 +27,48 @@
             <?php if(!isset($_SESSION['user'])){?>
                     <a class='nav__item' href='../login.php'>Login</a>
             <?php }else{?>
-                <div class='dropdown-btn nav__item'>
+                <div class='dropdown-btn nav__item' id="dropdown-btn-perfil">
                 Perfil
-                    <div class='dropdown is-hidden'> <!-- this one is for desktop -->
+                    <div class='dropdown is-hidden'id='dropdown-perfil'> <!-- this one is for desktop -->
                         <a class=' dropdown__item' href='update_data.php'>Atualizar Dados</a>
                         <a class=' dropdown__item' href='update_password.php'>Atualizar Senha</a>
                     </div>
-            </div>
+                </div>
                 
                 <!--those ones are for mobile -->
                 <a class='nav__item is-hidden' href='update_data.php'>Atualizar Dados</a>
                 <a class='nav__item is-hidden' href='update_password.php'>Atualizar Senha</a>
+
                 <script>
-                    perfil = document.querySelector('.dropdown-btn')
+                    perfil = document.getElementById('dropdown-btn-perfil')
                     perfil.addEventListener('click',()=>{   
-                        document.querySelector('.dropdown').classList.toggle('is-hidden')
+                        document.getElementById('dropdown-perfil').classList.toggle('is-hidden')
                     })
                 </script>
-                </li>
             <?php };?>
 
-            <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>1)){?>
-                    <a class='nav__item' href='register.php'>ADM</a>
+            <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=2)){?>
+                <div class='dropdown-btn nav__item' id="dropdown-btn-adm">
+                ADM
+                    <div class='dropdown is-hidden' id="dropdown-adm"> <!-- this one is for desktop -->
+                        <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
+                        <a class=' dropdown__item' href='register.php'>Registrar novo usuário</a>
+                        <?php } ?>
+                        <a class=' dropdown__item' href='upload_article.php' >Publicar artigo</a>
+                    </div>
+                </div>
+                
+                <!--those ones are for mobile -->
+                <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
+                <a class='nav__item is-hidden' href='register.php'>Registrar novo usuário</a>
+                <?php } ?>
+                <a class='nav__item is-hidden' href='upload_article.php'>Publicar artigo</a>
+                <script>
+                    perfil = document.getElementById('dropdown-btn-adm')
+                    perfil.addEventListener('click',()=>{   
+                        document.getElementById('dropdown-adm').classList.toggle('is-hidden')
+                    })
+                </script>
             <?php };?>
 
             <?php if(isset($_SESSION['user'])){?>

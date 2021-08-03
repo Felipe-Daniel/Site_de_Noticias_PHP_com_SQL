@@ -23,7 +23,7 @@
             ));
             $return['error']='Conta criada com sucesso';
         }
-        echo json_encode($return, JSON_PRETTY_PRINT); exit;
+        echo json_encode($return, JSON_PRETTY_PRINT); die;
     };
 
 ?>

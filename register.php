@@ -1,6 +1,4 @@
-<?php
-    Check::level_check(3);
-?>
+
     <?php
         $IPATH = $_SERVER['DOCUMENT_ROOT'] . "/layout/";
         require_once($IPATH . "header.php")
@@ -9,11 +7,11 @@
     <form action="inc/ajax/registration.php" method='POST' class='update-form'>
         <div class="form-block">
             <label for="user">Nome: </label>
-            <input type="text" name="user" required maxlength="255" value="abcd">
+            <input type="text" name="user" required maxlength="255" value="">
         </div>
         <div  class="form-block">
             <label for="password">Senha: </label>
-            ­<input type="password" name="password" required maxlength="255" value="abcd">
+            ­<input type="password" name="password" required maxlength="255" value="">
         </div>
         <div  class="form-block">
             <label for="password">Nível de autoridade: </label>
@@ -26,16 +24,17 @@
         </div>
         <div  class="form-block">
             <label for="email">Email: </label>
-            <input type="email" name="email" required maxlength="255" value="abcd@gmail.com">
+            <input type="email" name="email" required maxlength="255" value="">
         </div>
         <div  class="form-block">
             <label for="phone">Telefone: </label>
-            ­<input type="tel" name="phone" required maxlength="255" value="00000000">
+            ­<input type="tel" name="phone" required maxlength="255" value="">
         </div>
+        <div id='response' class="response"></div>
         <input type="submit" value="Enviar" class="submit-btn"> 
         
     </form>
-    <div id='response' class="response"></div>
+    
 </main>
 <script src="../assets/js/ajax.js"></script>
 <?php
