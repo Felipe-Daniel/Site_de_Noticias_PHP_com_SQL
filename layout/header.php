@@ -21,7 +21,6 @@
         </div>
         <div class='nav'>
             <a class='nav__item' class='nav__item' href="../index.php">Home</a>
-            <a class='nav__item' href="#">Notícias</a>
             <a class='nav__item' href="../contact">Contatos</a>
             
             <?php if(!isset($_SESSION['user'])){?>

@@ -4,11 +4,10 @@
     ?>
     <main>
     
-        <div id="articles" class='articles'>
+        <div id="previews" class='previews'>
         </div>
         <script src="assets/js/pagination.js"></script>
-        <script src="assets/js/articles.js"></script>
-        <script src="assets/js/content_ajax.js"></script>
+        <script src="assets/js/preview.js"></script>
         <ul class='pagination' id="pagination"> <!--pages or li are comes from javascript --> </ul>
         
     </main>
