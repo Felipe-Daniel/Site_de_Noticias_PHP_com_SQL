@@ -1,2 +1,2 @@
-# PHP-Login-System
-A sample login system with user registration
+# PHP-Sistema-do-Estagiário
+Baseado no primeiro sistema do estagiário da devmedia
