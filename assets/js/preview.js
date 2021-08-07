@@ -14,9 +14,9 @@ request.send();
 request.onreadystatechange = () =>{
   if (request.readyState == XMLHttpRequest.DONE) {
       data = request.responseText
-      data = JSON.parse(data)
+      data = JSON.parse(data, 'index.php')
       preview(data['results'])
-      pagination(data['page'], data['number_of_pages'])
+      pagination(data['page'], data['number_of_pages'], 'index.php')
       }
   }
 

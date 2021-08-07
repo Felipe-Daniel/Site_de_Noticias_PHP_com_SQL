@@ -1,4 +1,5 @@
-function pagination(page, totalPages){
+function pagination(page, totalPages,link){
+  console.log(link)
   // selecting required element
   const element = document.querySelector(".pagination");
   // let totalPages = 6; to debug
@@ -14,7 +15,7 @@ function pagination(page, totalPages){
     let beforePage = page - 1;
     let afterPage = page + 1;
     if(page > 1){ //show the next button if the page value is greater than 1
-      liTag += `<a class="btn prev" href='index.php?page=${page -1}'><i class="fas fa-angle-left"></i> Prev</a>`;
+      liTag += `<a class="btn prev" href='${link}?page=${page -1}'><i class="fas fa-angle-left"></i> Prev</a>`;
       
     }
 
@@ -60,7 +61,7 @@ function pagination(page, totalPages){
       }else{ //else leave empty to the active variable
         active = "";
       }
-      liTag += `<a class="numb ${active}" href='index.php?page=${plength}' onclick="createPagination(totalPages, ${plength})">${plength}</a>`;
+      liTag += `<a class="numb ${active}" href='${link}?page=${plength}' onclick="createPagination(totalPages, ${plength})">${plength}</a>`;
     }
 
     if(page < totalPages - 1 && totalPages!=3 && totalPages!=4){ //if page value is less than totalPage value by -1 then show the last li or page
@@ -71,7 +72,7 @@ function pagination(page, totalPages){
     }
 
     if (page < totalPages) { //show the next button if the page value is less than totalPage(20)
-      liTag += `<a class="btn next" href='index.php?page=${page + 1}'>Next <i class="fas fa-angle-right"></i></a>`;
+      liTag += `<a class="btn next" href='${link}?page=${page + 1}'>Next <i class="fas fa-angle-right"></i></a>`;
     }
     element.innerHTML = liTag; //add li tag inside ul tag
     return liTag; //reurn the li tag

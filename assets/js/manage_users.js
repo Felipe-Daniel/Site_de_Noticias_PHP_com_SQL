@@ -2,21 +2,29 @@ var request = new XMLHttpRequest();
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-if(params['page']>0){
-  query = '?page='+params['page']
-}else{
-  query = '?page='+ 1
-}
-request.open("POST", 'inc/ajax/manage_users.php' + query);
+
+request.open("POST", 'inc/ajax/manage.php');
 // turn this in a for each later to add all queries
-request.send();
+if(typeof params['page']=='undefined'){
+  // if page isn't selected
+  request.send(JSON.stringify({
+    'page': 1,
+    'db': 'users' 
+  }));
+}else{
+  // page is selected
+  request.send(JSON.stringify({
+    'page': params['page'],
+    'db': 'users' 
+  }));
+}
 
 request.onreadystatechange = () =>{
   if (request.readyState == XMLHttpRequest.DONE) {
       data = request.responseText
       data = JSON.parse(data)
       manage_users(data['results'])
-      pagination(data['page'], data['number_of_pages'])
+      pagination(data['page'], data['number_of_pages'], 'manage_users.php')
       }
   }
 
@@ -43,7 +51,7 @@ function manage_users(data){
             <div>Email: ${obj['email']}</div>
             <div>Level: ${obj['level']}</div>
             <div>Phone: ${obj['phone']}</div>
-            <button class='user-block__delete-btn' onclick=delete_user(${obj['id']})>DELETE</button>
+            <button class='delete-btn' onclick="delete_ajax(${obj['id']}, 'users')">DELETAR</button>
         </div> 
         `}
     container.innerHTML = previews_return;

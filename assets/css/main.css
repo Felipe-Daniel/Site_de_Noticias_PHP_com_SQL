@@ -439,27 +439,6 @@ footer, main::after {
   font-size: 1.5em;
 }
 
-.user-block__delete-btn {
-  border-radius: 10px;
-  cursor: pointer;
-  background: #FE5F00;
-  border: none;
-  color: white;
-  padding: 2.2% 4.4%;
-  font-size: 1.4rem;
-  outline: none;
-  -webkit-box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
-          box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
-}
-
-.user-block__delete-btn:hover {
-  background-color: #fe5d00ee;
-}
-
-.user-block__delete-btn:active {
-  background-color: #fe5d00c2;
-}
-
 .user-block__adm-btn {
   border-radius: 10px;
   border: none;
@@ -491,6 +470,63 @@ footer, main::after {
         -ms-flex: 1 0 100%;
             flex: 1 0 100%;
   }
+}
+
+.manage-articles {
+  color: #FE5F00;
+  font-weight: bold;
+}
+
+.article-block {
+  -webkit-box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
+          box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.7) inset, 0 3px 5px 2px rgba(255, 255, 255, 0.3) inset;
+  background-color: #eee;
+  color: #333;
+  border-radius: 5px;
+  margin: 2%;
+  padding: 1.5%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.article-block__title {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.article-block__text {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.article-block__metadata {
+  text-align: right;
+}
+
+.article-block > * {
+  margin: 2%;
+}
+
+.delete-btn {
+  border-radius: 10px;
+  cursor: pointer;
+  background: #FE5F00;
+  border: none;
+  color: white;
+  padding: 2.2% 4.4%;
+  font-size: 1.4rem;
+  outline: none;
+  -webkit-box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+          box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+}
+
+.delete-btn:hover {
+  background-color: #fe5d00ee;
+}
+
+.delete-btn:active {
+  background-color: #fe5d00c2;
 }
 
 .form-block {
@@ -774,5 +810,21 @@ footer, main::after {
 
 .is-show {
   display: block;
+}
+
+.is-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .is-mobile {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .is-desktop {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

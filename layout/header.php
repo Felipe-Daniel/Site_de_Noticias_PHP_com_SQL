@@ -26,7 +26,7 @@
             <?php if(!isset($_SESSION['user'])){?>
                     <a class='nav__item' href='../login.php'>Login</a>
             <?php }else{?>
-                <div class='dropdown-btn nav__item' id="dropdown-btn-perfil">
+                <div class='dropdown-btn nav__item is-desktop' id="dropdown-btn-perfil">
                 Perfil
                     <div class='dropdown is-hidden'id='dropdown-perfil'> <!-- this one is for desktop -->
                         <a class=' dropdown__item' href='update_data.php'>Atualizar Dados</a>
@@ -47,24 +47,26 @@
             <?php };?>
 
             <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=2)){?>
-                <div class='dropdown-btn nav__item' id="dropdown-btn-adm">
+                <div class='dropdown-btn nav__item is-desktop' id="dropdown-btn-adm">
                 ADM
                     <div class='dropdown is-hidden' id="dropdown-adm"> <!-- this one is for desktop -->
                         <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
                         <a class=' dropdown__item' href='register.php'>Registrar novo usuário</a>
                         <a class=' dropdown__item' href='manage_users.php'>Todos usuários</a>
                         <?php } ?>
+                        <a class=' dropdown__item' href='manage_articles.php'>Manutenção dos artigos</a>
                         <a class=' dropdown__item' href='upload_article.php' >Publicar artigo</a>
                     </div>
                 </div>
                 
                 <!--those ones are for mobile -->
                 <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
-                <a class='nav__item is-hidden' href='register.php'>Registrar novo usuário</a>
-                <a class='nav__item is-hidden' href='manage_users.php'>Todos usuários</a>
+                <a class='nav__item is-mobile' href='register.php'>Registrar novo usuário</a>
+                <a class='nav__item is-mobile' href='manage_users.php'>Todos usuários</a>
 
                 <?php } ?>
-                <a class='nav__item is-hidden' href='upload_article.php'>Publicar artigo</a>
+                <a class='nav__item is-mobile' href='manage_articles.php'>Manutenção dos artigos</a>
+                <a class='nav__item is-mobile' href='upload_article.php'>Publicar artigo</a>
                 <script>
                     perfil = document.getElementById('dropdown-btn-adm')
                     perfil.addEventListener('click',()=>{   
