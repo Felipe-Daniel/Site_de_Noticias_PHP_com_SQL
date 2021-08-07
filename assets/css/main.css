@@ -64,6 +64,7 @@ main {
 main::after {
   content: '';
   display: block;
+  clear: both;
 }
 
 footer, main::after {
@@ -397,6 +398,10 @@ footer, main::after {
   margin: 0 2% 2% 0;
   max-width: 40%;
   max-height: 400px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid #EEE;
 }
 
 @media screen and (max-width: 768px) {
@@ -404,6 +409,87 @@ footer, main::after {
     margin: 2%;
     float: none;
     max-width: 100%;
+  }
+}
+
+.manage-users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #FE5F00;
+  font-weight: bold;
+}
+
+.user-block {
+  border-radius: 5px;
+  margin: 2%;
+  padding: 1.5%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 29%;
+          flex: 0 0 29%;
+  background-color: #333;
+  -webkit-box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+          box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+}
+
+.user-block__user {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.user-block__delete-btn {
+  border-radius: 10px;
+  cursor: pointer;
+  background: #FE5F00;
+  border: none;
+  color: white;
+  padding: 2.2% 4.4%;
+  font-size: 1.4rem;
+  outline: none;
+  -webkit-box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+          box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3);
+}
+
+.user-block__delete-btn:hover {
+  background-color: #fe5d00ee;
+}
+
+.user-block__delete-btn:active {
+  background-color: #fe5d00c2;
+}
+
+.user-block__adm-btn {
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 2.2% 4.4%;
+  font-size: 1.4rem;
+  outline: none;
+  background: radial-gradient(#aaa 0%, #333 100%);
+  font-weight: bolder;
+  -webkit-box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3), 0 0 5px 2px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 -5px 5px inset rgba(0, 0, 0, 0.5), 0 4px 5px inset rgba(255, 255, 255, 0.3), 0 0 5px 2px rgba(255, 255, 255, 0.2);
+}
+
+.user-block > * {
+  margin: 4%;
+}
+
+@media screen and (max-width: 1048px) {
+  .user-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 46%;
+            flex: 1 0 46%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .user-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
   }
 }
 

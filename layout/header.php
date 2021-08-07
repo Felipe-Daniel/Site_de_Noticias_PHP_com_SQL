@@ -52,6 +52,7 @@
                     <div class='dropdown is-hidden' id="dropdown-adm"> <!-- this one is for desktop -->
                         <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
                         <a class=' dropdown__item' href='register.php'>Registrar novo usuário</a>
+                        <a class=' dropdown__item' href='manage_users.php'>Todos usuários</a>
                         <?php } ?>
                         <a class=' dropdown__item' href='upload_article.php' >Publicar artigo</a>
                     </div>
@@ -60,6 +61,8 @@
                 <!--those ones are for mobile -->
                 <?php if((isset($_SESSION['level'])) && ($_SESSION['level']>=3)){?>
                 <a class='nav__item is-hidden' href='register.php'>Registrar novo usuário</a>
+                <a class='nav__item is-hidden' href='manage_users.php'>Todos usuários</a>
+
                 <?php } ?>
                 <a class='nav__item is-hidden' href='upload_article.php'>Publicar artigo</a>
                 <script>
