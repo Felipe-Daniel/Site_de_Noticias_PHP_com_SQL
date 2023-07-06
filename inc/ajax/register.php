@@ -12,18 +12,16 @@
         if(User::user_exist($user)){
             $return['error']='Esse usuário já possui uma conta';
         }else{
-            $adduser=$con->prepare('INSERT INTO users (user, password, level, email, phone)
-                            VALUES(:user,:password, :level, :email,:phone)');
+            $adduser=$con->prepare('INSERT INTO users (user, password, level, email, tel)
+                            VALUES(:user,:password, :level, :email,:tel)');
             $adduser->execute(array(
                 ':user' => $user,
                 ':password' => $password,
                 ':level' => filter::Int($_POST['level']),
                 ':email' => filter::Email($_POST['email']),
-                ':phone' => filter::String($_POST['phone'])
+                ':tel' => filter::String($_POST['tel'])
             ));
             $return['error']='Conta criada com sucesso';
         }
         echo json_encode($return, JSON_PRETTY_PRINT); die;
     };
-
-?>

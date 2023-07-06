@@ -14,13 +14,13 @@ class User
     public $password;
     public $level;
     public $email;
-    public $rg;
+    public $tel;
 
     public function __construct($user)
     {
         $this->con = DB::getConnection();
 
-        $user_data = $this->con->prepare("SELECT user, password, level, email, rg FROM users WHERE user = :user LIMIT 1");
+        $user_data = $this->con->prepare("SELECT user, password, level, email, tel FROM users WHERE user = :user LIMIT 1");
         $user_data->execute(array(
             ':user' => $user
         ));
@@ -31,6 +31,7 @@ class User
             $this->password     = $user_data->password;
             $this->level         = $user_data->level;
             $this->email         = $user_data->email;
+            $this->tel         = $user_data->tel;
         } else {
             // No user.
             // Redirect to to logout.

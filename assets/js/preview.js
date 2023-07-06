@@ -22,13 +22,19 @@ request.onreadystatechange = () =>{
 
 function preview(data){
     const container = document.getElementById('previews')
-    previews_return=''
+    previews_return=``
     data.forEach(obj => {
-        previews_return+=`<a style='background-image: url(assets/images/${obj['img']});'
-         class='preview'
-         href = "article.php?id=${obj['id']}">`
-            previews_return+=`<div class='preview__title'>${obj['title']}</div>`
-        previews_return+=`</a>`
+      previews_return += `<div class="col-6 col-md-4 col-lg-3 card m-4">
+      <div class="card-body">
+        <h2 class="card-title">${obj['title']}</h2>
+        <span class="card-subtitle">${obj['requisitos']}</span>
+        <div class="row my-2">
+          <div class="col card-text h4">R$${obj['remuneracao']},00</div>
+          <div class="col card-text h4 text-end">${obj['carga_horaria']} horas</div>
+        </div>
+        <a href="article.php?id=${obj['id']}" class="btn btn-primary">Ver vaga</a>
+      </div>
+    </div>`;
     container.innerHTML = previews_return;
     return previews_return
 })};

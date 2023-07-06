@@ -4,8 +4,8 @@
     ?>
     <main>
     
-        <div id="previews" class='previews'>
-        </div>
+        <div class='container'><div id="previews" class="row">
+        </div></div>
         <script src="assets/js/pagination.js"></script>
         <script src="assets/js/preview.js"></script>
         <ul class='pagination' id="pagination"> <!--pages or li are comes from javascript --> </ul>

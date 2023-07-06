@@ -16,9 +16,9 @@
     if($db=='users'){
         $query= "SELECT * FROM users LIMIT 6 OFFSET :start";
         $query_count = 'SELECT * FROM users';
-    }elseif($db=='news'){
-        $query= "SELECT * FROM news LIMIT 6 OFFSET :start";
-        $query_count = 'SELECT * FROM news';
+    }elseif($db=='sheesh_db'){
+        $query= "SELECT * FROM vaga LIMIT 6 OFFSET :start";
+        $query_count = 'SELECT * FROM vaga';
     }else{
         die('Invalid database');
     };

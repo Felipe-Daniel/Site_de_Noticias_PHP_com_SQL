@@ -13,11 +13,11 @@
             die('You can not delete the administrator!');
         };
 
-        // extra layer of security
+        // extra layer of security 
         if($db=='users'){
             $query= "DELETE FROM users WHERE id LIKE :id";
-        }elseif($db=='news'){
-            $query= "DELETE FROM news WHERE id LIKE :id";
+        }elseif($db=='vaga'){
+            $query= "DELETE FROM vaga WHERE id LIKE :id";
         }else{
             die('Invalid database');
         };

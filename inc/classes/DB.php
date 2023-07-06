@@ -13,7 +13,7 @@ class DB {
 
 		try {
 
-			self::$con = new PDO( 'mysql:host=localhost;dbname=news;charset=utf8mb4', 'root', '' );
+			self::$con = new PDO( 'mysql:host=localhost;dbname=sheesh_db;charset=utf8mb4', 'root', '' );
 			self::$con->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			self::$con->setAttribute( PDO::ATTR_PERSISTENT, false );
 

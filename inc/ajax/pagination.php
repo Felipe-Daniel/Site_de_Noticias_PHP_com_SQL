@@ -13,7 +13,8 @@
 
     $start = ($page-1) * $page_count;
     if($search != ''){
-        $results = $con->prepare("SELECT * FROM news
+        $results = $con->prepare("SELECT vaga.*, e.nomeFantasia FROM vaga 
+            LEFT JOIN empresa e on e.cnpj = vaga.cnpj 
             WHERE text LIKE :text OR title LIKE :title 
             LIMIT 6 OFFSET :start");
         $results->bindParam(':start', $start, PDO::PARAM_INT);
@@ -23,13 +24,15 @@
             ':start' => $start
         ));
 
-    }else{$results = $con->prepare("SELECT * FROM news LIMIT 6 OFFSET :start");
+    }else{$results = $con->prepare("SELECT vaga.*, e.nomeFantasia FROM vaga 
+        LEFT JOIN empresa e on e.cnpj = vaga.cnpj LIMIT 6 OFFSET :start");
         $results->bindParam(':start', $start, PDO::PARAM_INT);
         $results->execute();
         // $results = $con->query("SELECT * FROM news LIMIT 6 OFFSET '$start'");
     };
     
-    $row_count = $con->query('SELECT * FROM news')->rowCount();
+    $row_count = $con->query('SELECT vaga.*, e.nomeFantasia FROM vaga 
+    LEFT JOIN empresa e on e.cnpj = vaga.cnpj ')->rowCount();
     $number_of_pages = ceil($row_count / $page_count);
 
     $results = $results->fetchAll(PDO::FETCH_OBJ);
